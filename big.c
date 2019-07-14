@@ -3,16 +3,19 @@
 void sum(char[], char[]);
 void sub(char[],char[]);
 void mul(char[],char[]);
-void div(char[],char[]);
 
 char *strrev(char *str) {
   char c, *front, *back;
 
   if(!str || !*str)
       return str;
-  for(front=str,back=str+strlen(str)-1;front < back;front++,back--){
-      c=*front;*front=*back;*back=c;
+    
+  for(front=str, back=str+strlen(str)-1; front < back; front++,back--){
+      c=*front;
+      *front=*back;
+      *back=c;
     }
+
   return str;
 }
 
@@ -22,7 +25,6 @@ int main(void) {
    printf("| 1. Addition      | \n");
    printf("| 2. Substraction  | \n");
    printf("| 3. Multiplication| \n");
-   printf("| 4. Division      | \n");
    printf("|------------------| \n"); 
 
   char Num1[100], Num2[100], Ans[100];
@@ -40,16 +42,10 @@ int main(void) {
      case 1: sum(Num1, Num2); break;
      case 2: sub(Num1, Num2); break;
      case 3: mul(Num1, Num2); break;
-     case 4: div(Num1, Num2); break;
      default: printf("Wrong choise\n");
    }
-  mul(Num1, Num2);
 }
 
-void div(char s1[], char s2[]) {
-
-//enter code
-}
 
 void mul(char s1[], char s2[]) {
 
@@ -177,17 +173,20 @@ void sum(char s1[], char s2[]) {
   }
 
   //Calculating the difference b/w the length
-  int n1 = strlen(s1),
-  n2 = strlen(s2);
-  int diff = n1-n2;
+  int n1 = strlen(s1);
+  int n2 = strlen(s2);
 
   //Reversing the strings
-  strrev(s1); strrev(s2);
+  strrev(s1); 
+  strrev(s2);
 
   //Converting each char of string to a int and performing adding with help of carry
   for (i=0; i<n1; i++) {
     int sum = ((s1[i]-'0')+(s2[i]-'0')+carry);
-    char t[1] = ""; t[0]=(sum%10 + '0');
+
+    //Temporary array
+    char t[1] = ""; 
+    t[0]=(sum%10 + '0');
     
     //Concatination of string
     strcat(ans,t);
