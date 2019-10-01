@@ -97,15 +97,18 @@ void sub(char s1[], char s2[]) {
     strcpy(s2,temp);
     change=1;
   }
+  // 24 15
   if(strlen(s2)==strlen(s1)) {
     for(i=0; i<strlen(s1);i++) {
       if(s2[i]-'0' > s1[i]-'0') {
-        char temp[100];
-        strcpy(temp,s1);
-        strcpy(s1,s2);
-        strcpy(s2,temp);
-        change=1;
-        break;
+        if(i != 0 && s2[i-1] - '0' == s1[i-1] - '0') {
+          char temp[100];
+          strcpy(temp,s1);
+          strcpy(s1,s2);
+          strcpy(s2,temp);
+          change=1;
+          break;  
+        }
       }
     }
   }
