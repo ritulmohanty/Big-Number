@@ -36,7 +36,7 @@ int main(void) {
   printf("Enter 2nd no \n");
   scanf("%s",Num2);
 
-   printf("Enter your choice \n");
+   printf("Enter your choice From Menu \n");
    scanf("%d",&choice);
 
    switch(choice) {
