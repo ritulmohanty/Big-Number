@@ -43,7 +43,7 @@ int main(void) {
      case 1: sum(Num1, Num2); break;
      case 2: sub(Num1, Num2); break;
      case 3: mul(Num1, Num2); break;
-     default: printf("Wrong choise\n");
+     default: printf("Wrong choice, select again\n");
    }
 }
 
