@@ -1,4 +1,4 @@
-# Big-Number
+# Big-Number in C
 
 ### You like it ?
 - Don't forget to Start and Watch the repo 
